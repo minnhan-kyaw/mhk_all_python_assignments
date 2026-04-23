@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bratt Pit</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>My Profile</h1>
+        
+        <div class="profile-pic">
+            <img src="brad pitt.jpg" alt="Profile Picture"> 
+            </div>
+
+        <div class="box">
+            <h2>About Me</h2>
+            <p>Brad Pitt is a famous actor and film producer from the United States.
+                He is known for his roles in many popular movies like Fight Club and World War Z.
+                He is admired for his talent, good looks, and strong acting skills.
+                Brad Pitt has won many awards and is one of the most successful actors in Hollywood.</p>
+        </div>
+
+        <div class="box">
+            <h2>Objective</h2>
+            <p>Brad Pitt's main goal is to create meaningful movies and continue growing in the film industry.
+                He wants to inspire people through his acting and support new talents in Hollywood.</p>
+        </div>
+
+        <button onclick="contactForm()" class="toggle.btn">
+            Get contact?
+        </button>
+        <div id="contactForm" class="box" style="display: none;">
+            <h2>Contact Me</h2>
+            <form onsubmit="showAlert(event)">
+
+                <label>Name:</label><br>
+                <input type="text" required><br><br>
+
+                <label>Email:</label><br>
+                <input type="email" required><br><br>
+
+                <label>Message box:</label><br>
+                <textarea required></textarea><br><br>
+
+                <button type="submit" class="sent-btn">Send</button>
+
+            </form>
+        </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>
