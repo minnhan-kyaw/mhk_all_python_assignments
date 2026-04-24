@@ -17,5 +17,16 @@ def greet(name):
     age = request.args.get("heigh")
     return render_template("greet.html",user_name=name,heigh="")
 
+
+products = []
+@app.route("/product", methods=["GET","POST"])
+def product():
+    if request.method == "POST":
+        name = request.form.get("name")
+        price = request.form.get("price")
+        products.append({"name":name, "price":price})
+        print(products)
+    return render_template("product.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
