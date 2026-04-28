@@ -1,4 +1,6 @@
-from flask import Flask,render_template,request
+# import webbrowser
+# webbrowser.open("http://127.0.0.1:5000")
+from flask import Flask,render_template,request,redirect
 from datetime import datetime
 app = Flask(__name__)
 
@@ -12,21 +14,31 @@ def my_name(age):
 def current():
     return f"Now is {datetime.now()}"
 
+@app.route("/")
+def mypage():
+    return redirect("/product")
+
 @app.route("/greeting/<name>")
 def greet(name):
-    age = request.args.get("heigh")
-    return render_template("greet.html",user_name=name,heigh="")
-
+    h_value = request.args.get("height")
+    return render_template("greet.html",user_name=name,height=h_value)
 
 products = []
-@app.route("/product", methods=["GET","POST"])
-def product():
+
+@app.route("/product",methods=["GET","POST"])
+def create_product():
     if request.method == "POST":
         name = request.form.get("name")
         price = request.form.get("price")
-        products.append({"name":name, "price":price})
+        products.append({"name": name, "price": price})
         print(products)
+        return redirect("/product_list")
+
     return render_template("product.html")
+
+@app.route("/product_list")
+def list_products():
+    return render_template("product_list.html", product_list=products)
 
 if __name__ == "__main__":
     app.run(debug=True)
