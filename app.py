@@ -40,5 +40,16 @@ def create_product():
 def list_products():
     return render_template("product_list.html", product_list=products)
 
+@app.route("/product/<index>",methods=["POST"])
+def delete_product(index):
+    if index != "" and index.isdigit():
+        index = int(index)
+    else:
+        index = 0
+
+    if index >= 0 and index < len(products):
+        products.pop(index)
+    return redirect("/product_list")
+
 if __name__ == "__main__":
     app.run(debug=True)

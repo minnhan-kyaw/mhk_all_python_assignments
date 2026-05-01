@@ -13,12 +13,13 @@
             <tr>
             <th>Product Name</th>
             <th>Price</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
             {% if not product_list %}
             <tr>
-                <td colspan="2" >No Record.</td>
+                <td colspan="3" >No Record.</td>
             </tr>
             {% endif %}
 
@@ -26,6 +27,11 @@
             <tr>
                 <td>{{ product.name }}</td>
                 <td>{{ product.price }}</td>
+                <td>
+                    <form method="post" action="/product/{{ loop.index0 }}">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
