@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   background-color: rgba(211, 208, 195, 0.866);
+   color: rgb(45, 39, 39);
+}
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 1rem 10%;
+    margin-bottom: 25px;
+}
+
+.nav-menu{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.main-content{
+    width: 800px;
+    margin: 0 auto;
+}
+
+.card{
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 7px 8px rgb(0, 0, 0,0.1);
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.entry-form{
+    margin-top: 15px;
+}
+
+.text-box{
+    padding: 10px;
+    border: 1px solid rgb(76, 68, 68);
+    border-radius: 5px;
+}
+
+.btn-group{
+    display: flex;
+}
+
+.save-btn{
+    padding: 9px 18px;
+    border-radius: 6px;
+    background-color: rgb(128, 128, 146);
+    color: white;
+}
