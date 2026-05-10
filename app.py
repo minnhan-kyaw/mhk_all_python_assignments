@@ -51,5 +51,29 @@ def delete_product(index):
         products.pop(index)
     return redirect("/product_list")
 
+# def edit_product(index):
+#     if index != "" and index.isdigit():
+#         index = int(index)
+#     else:
+#         index = 0
+
+@app.route("/product/edit/<index>",methods=["GET","POST"])
+def edit_product(index):
+    if index != "" and index.isdigit():
+        index = int(index)
+    else:
+        index = 0
+
+    current = products[index]
+    if request.method == "GET":
+        return render_template("product_edit.html", current=current, index = index)
+    else:
+        current['name']= request.form.get("name")
+        current['price'] = request.form.get("price")
+
+        products[index] = current
+        return redirect("/product_list")
+
+
 if __name__ == "__main__":
     app.run(debug=True)

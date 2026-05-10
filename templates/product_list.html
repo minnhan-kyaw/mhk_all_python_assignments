@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product List</title>
-</head>
-<body>
-    <a href="/product">Create One</a>
+{% extends "base.html" %}
+
+{% block title%}Listing{% endblock %}
+
+{% block body%}
+<a href="/product">Create One</a>
     <br>
     <table border="1" cellpadding="10" cellspacing="0">
         <thead>
@@ -28,13 +25,16 @@
                 <td>{{ product.name }}</td>
                 <td>{{ product.price }}</td>
                 <td>
-                    <form method="post" action="/product/{{ loop.index0 }}">
-                        <button type="submit">Delete</button>
+                    <a href="/product/edit/{{loop.index0}}">Edit</a>
+                    <form method="post" action="/product/{{ loop.index0 }}" style="display: inline;">
+                        <button type="submit" onclick="return confirm('Are you sure want to delete this product?')">Delete</button>
                     </form>
                 </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-</body>
-</html>
+
+ {% endblock %}
+
+
