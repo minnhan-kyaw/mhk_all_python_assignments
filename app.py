@@ -1,5 +1,4 @@
-# import webbrowser
-# webbrowser.open("http://127.0.0.1:5000")
+
 from flask import Flask,render_template,request,redirect
 from datetime import datetime
 app = Flask(__name__)
@@ -51,11 +50,6 @@ def delete_product(index):
         products.pop(index)
     return redirect("/product_list")
 
-# def edit_product(index):
-#     if index != "" and index.isdigit():
-#         index = int(index)
-#     else:
-#         index = 0
 
 @app.route("/product/edit/<index>",methods=["GET","POST"])
 def edit_product(index):
