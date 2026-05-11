@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Create{% endblock %}
+
+{% block body%}
+<form method="POST" action="{{ url_for('create_product') }}" >
+    <p>Name</p>
+    <input name="name" type="text" required>
+    <p>Price</p>
+    <input name="price" type="number" min="0" required><br><br>
+    <input type="submit" value="save"><br><br>    
+</form>
+{% endblock %}
