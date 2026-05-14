@@ -1,13 +1,27 @@
 {% extends "base.html" %}
 
-{% block title %}Create{% endblock %}
+{% block title %}Create Product{% endblock %}
 
-{% block body%}
-<form method="POST" action="{{ url_for('create_product') }}" >
-    <p>Name</p>
-    <input name="name" type="text" required>
-    <p>Price</p>
-    <input name="price" type="number" min="0" required><br><br>
-    <input type="submit" value="save"><br><br>    
-</form>
+{% block body %}
+<div class="form">
+    <div class="form-card">
+        <h2>Add New Product</h2>
+        <form method="POST" action="{{ url_for('create_product') }}">
+            <div class="input-group">
+                <label for="name">Product Name</label>
+                <input name="name" id="name" type="text" placeholder="Enter product name" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="price">Price (Ks)</label>
+                <input name="price" id="price" type="number" min="0" placeholder="Enter price" required>
+            </div>
+
+            <div class="button-group">
+                <input type="submit" value="Save Product" class="btn-save">
+                <a href="{{ url_for('list_products') }}" class="btn-cancel">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}

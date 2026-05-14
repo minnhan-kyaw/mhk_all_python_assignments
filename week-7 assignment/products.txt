@@ -1,2 +1,4 @@
-Coffee,4500
 Cake,5000
+Ice-cream,900
+Coconut,3500
+Milk-tea,4500
