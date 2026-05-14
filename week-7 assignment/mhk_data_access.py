@@ -1,6 +1,6 @@
 import os
 
-FILE_PATH = 'products.txt'
+FILE_PATH = 'mhk_products.txt'
 
 def save_to_file(products):
     with open(FILE_PATH, 'w') as f:
