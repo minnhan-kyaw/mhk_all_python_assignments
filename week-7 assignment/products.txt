@@ -1,4 +1,2 @@
-Cake,5000
-Ice-cream,900
-Coconut,3500
-Milk-tea,4500
+Milk-tea,5500
+Shwe-Yin-Aye,2500.0
